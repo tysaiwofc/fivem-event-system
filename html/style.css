@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#announcement {
+    position: fixed;
+    bottom: 80px; /* Mantém no canto inferior */
+    right: 20px; /* Mantém à direita */
+    background-color: #ffc400; /* Fundo amarelo */
+    opacity: 70%;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 9999;
+    display: none;
+    font-size: 16px;
+    animation: fadeIn 0.5s ease-in-out;
+    font-style: normal;
+    font-weight: 700;
+    
+    /* Definir um tamanho máximo para a largura */
+    max-width: 300px; /* Limite a largura a 300px (ajuste conforme necessário) */
+    width: auto; /* Ajusta a largura automaticamente */
+    
+    /* Quebra o texto se ultrapassar o limite */
+    word-wrap: break-word;
+    
+    /* Borda neon (opcional) */
+    /* box-shadow: 0 0 10px 5px rgba(240, 240, 240, 0.8); */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+#announcementText {
+    margin-top: 10px;
+}
+
+#announcement .title {
+    position: absolute; /* Faz o título ser posicionado de forma absoluta dentro do #announcement */
+    top: -50%; /* Coloca o título um pouco fora do topo, 50% da altura */
+    left: 10px; /* Coloca o título 10px da esquerda */
+    transform: translateY(50%); /* Ajusta o título para ficar "metade dentro" e "metade fora" */
+    font-size: 18px; /* Tamanho do título */
+    font-weight: bold;
+    color: #fcfaf8; /* Cor do título */
+    background-color: #fd9800;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px rgba(240, 240, 240, 0.8);
+    padding: 5px 10px;
+    text-align: center; /* Alinha o texto do título no centro */
+    max-width: 90%; /* Limita a largura do título a 90% do contêiner */
+    word-wrap: break-word; /* Quebra palavras longas caso seja necessário */
+    overflow: hidden; /* Evita que o texto ultrapasse o limite */
+    white-space: nowrap; /* Impede o título de quebrar linha */
+    font-size: clamp(14px, 4vw, 18px); /* Ajusta o tamanho da fonte para ficar proporcional à tela */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Inverte a direção da animação para subir ao aparecer */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
